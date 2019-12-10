@@ -26,8 +26,23 @@
     </div>
 
     <div id="main-wrapper" style='margin:0 auto;margin-top:100px;margin-bottom:100px;width:60%;'>
-        <p align='justify'>   
-            CONTENT GOES HERE
+        <p style='text-align:justify'>   
+            <h2>Compiling the Data</h2>
+            <br>
+            <br>
+            We began compiling the data by exploring the contents and relevance of all the available data sources. While doing this, we focused particularly on methods of data extraction, as these datasets were all different in nature.
+            <br>
+            <br>
+            After downloading the Spotify Million Playlists dataset, we found that it consists of CSV files, each containing 1,000 playlists. As a result, there were 1,000 CSV files in the entire dataset. ​Million_Playlists_Aggregation.ipynb​ contains the code we wrote to compile all 1,000 playlists into one dataset. While doing this, we noticed that Pandas DataFrames are slow att appending DataFrames when they have been read from CSVs. We found this to be a documented 1 issue. We noticed that the execution time of df.append() increased exponentially with the increase in size of df. In order to mitigate this inefficiency, we split the data into buckets, each compiled into a small df. We then compiled these small dfs into slightly larger dfs. Ultimately, we combined the slightly larger dfs into a df that held all million playlists. Hence, we minimized the frequency of df.append() on larger dfs.
+            <br>
+            <br>
+            The Last FM Million songs dataset was comprised of a hierarchy of directories, each containing JSON files. Each JSON file represented one track with its attributes, including tags and similar tracks. ​Last_FM_Aggregation.ipynb c​ ontains the code we wrote to compile all million songs into one dataframe. This was a simple matter of iterating over each JSON file, reading its contents, and appending it to a dataframe that contains the entire dataset. We found the execution time to be constant and therefore didn’t have to conduct any operational manipulation.
+            <br>
+            <br>
+            The Spotify API we found to be useful for two reasons: firstly, it contains more information about individual songs; secondly, it can be used to derive a each song’s ISRC code, a universal track identification taxonomy, which is used to map data between the Last FM and Spotify Million Playlists datasets. The Spotify API presented two limitations: firstly, the API returns a rate limit error (status code 429) when the rate of requests has been exceeded, which required us to wait a designated number of seconds before sending a new request; secondly, the API requires the application to generate a new access token every hour. Spotify_API_Requests.ipynb c​ ontains the code we wrote to ping the Spotify API based on a track’s ID, which was derived from the Spotify Million Playlists dataset (after dropping songs that were in duplicate playlists). We then merged this data with the dataframe we generated from the Spotify Million Playlists dataset on the Spotify track ID.
+            <br>
+            <br>
+            Finally, we merged the Spotify Million Playlists dataset (ameliorated through the Spotify API) with the Last FM dataset on the ISRC codes.
         </p>
     </div>
 
