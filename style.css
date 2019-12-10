@@ -1,0 +1,175 @@
+
+@font-face {
+    font-family: 'Myriad';
+    src: url(MyriadPro-Regular.otf);
+}
+
+body {
+	background-color: #eee;
+}
+
+	body.is-loading * {
+		-moz-transition: none !important;
+		-webkit-transition: none !important;
+		-o-transition: none !important;
+		-ms-transition: none !important;
+		transition: none !important;
+		-moz-animation: none !important;
+		-webkit-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+
+body {
+	line-height: 1.5em;
+	text-align: justify;
+	font-size: 0.8em;
+	font-family: 'Baskerville';
+	text-decoration: none;
+	cursor: default;
+	letter-spacing: 0.1em;
+}
+
+#body {
+	display: none;
+}
+
+a {
+	color: black;
+	opacity: 1.0;
+	text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+h1 {
+	padding: 0em 0em 0em 0em;
+	font-family: 'Myriad';
+	font-size: 45px;
+	letter-spacing: 0.35em;
+	color: #333333;
+	position: center;
+}
+
+h1 a {
+  color: #333333;
+}
+
+	h1:hover {
+		color: #7e7e9b;
+		-moz-transition: all 0.1s ease-in-out;
+		-webkit-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		-ms-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-out;
+	}
+
+
+p {
+  color: #4c4c4c;
+	margin-bottom: 2em;
+}
+
+ul {
+	margin-bottom: 3em;
+	font-size: 0.8em;
+}
+
+
+#main-wrapper {
+	text-align: center;
+	padding: 0em 0 2.2em 0;
+	font-size: 16px;
+}
+
+	#main-wrapper h3 {
+		letter-spacing: 0.2em;
+		text-align: center;
+		font-size: 0.9em;
+		color: #333333;
+	}
+
+	#main-wrapper p.into {
+		text-align: justify;
+		margin: 2em 10em 0em 10em;
+		letter-spacing: 0.1em;
+	}
+
+  #main-wrapper p.outto {
+    text-align: center;
+    margin: 2em 10em 0em 10em;
+    letter-spacing: 0.1em;
+  }
+
+  #main-wrapper p.outto2 {
+    text-align: center;
+    margin: 2em 13em 0em 13em;
+    letter-spacing: 0.1em;
+  }
+
+	#main-wrapper img {
+		width: 200px;
+		float: center;
+	}
+
+#insta-wrapper {
+	margin: 0em 16em;
+}
+
+#header-wrapper {
+	position: relative;
+	text-align: center;
+	margin-top: 1em;
+	padding: 2em 0 0 0;
+}
+
+#nav {
+	margin-top: 2em;
+	margin-bottom: 3em;
+	font-size: 19px;
+	letter-spacing: 0.2em;
+}
+
+#footer {
+	margin-top: 0;
+	text-align: center;
+  font-size:12px;
+}
+
+#main-wrapper div {
+  margin: 20px;
+}
+
+#main-wrapper ul {
+  list-style-type: none;
+  width: 500px;
+}
+
+#main-wrapper h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding:0;
+}
+
+#main-wrapper li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+#main-wrapper li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+  align: right;
+}
+
+#main-wrapper li {
+  padding: 10px;
+  overflow: auto;
+}
+
+#main-wrapper li:hover {
+  background: #eee;
+  cursor: pointer;
+}
