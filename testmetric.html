@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Spotify Playlist Prediction</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="author" content="CS109 Group">
+        <meta name="keywords" content="cs109, spotify, playlist prediction">
+        <meta name="description" content="Spotify playlist prediction project for CS109" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="scripts.js"></script>
+
+  </head>
+
+  <body id="body">
+
+    <div align="center" style="margin-top:100px">
+        <a href="index.html"><img src="https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png" width="100" height="100" /></a>
+    </div>
+
+    <div id="header-wrapper">
+      <div id="header">
+        <h2 style='font-size:30pt;'><a id="link" href="index.php">TEST METRIC</a></h2>
+      </div>
+    </div>
+
+    <div id="main-wrapper" style='margin:0 auto;margin-top:100px;margin-bottom:100px;width:60%;'>
+        <p align='justify'>
+          Determining a valid test metric was a signifcant part of this project. We had initally been using various metrics
+          like trying to predict a subset of songs from a specific playlist given some other songs from the playlist, but realised that was close to impossible.
+          While creating our final model, we determined a new, very reasonable test metric that we then went back and applied on our inital models to prove, body
+          that by that objective test metric, they were not great models.
+          <br>
+          <br>
+          We realised that the likelihood of predicting songs from the same playlist was utterly low, given the massive number of playlists. Additionally, from out intuitive youthful understanding of music, it was clear that there were ample songs in the nighbors that are not in the same playlist as the input song, but are still worthy of recommendation. We decided that the contextual environment of this project enables testing to be doing by using our very own human judgment to test the performance of our models. In fact, we realised that by asking a number of our friends for their opinion on a list of predicted songs, given an input song, was a generally valid method of determinng the goodness of the predicted songs.
+          <br>
+          <br>
+          As is required in Data Science, we decided on an objective metric of using our own and our friends' evaluaton of the predicted songs. Every time we wanted to evaluate our model, we decided to ask 5+ people to listen to a snippet of the input song and then snippets of the determined neighbors, and tell us what they believed was the similarity level between the input song and the neighbors on a scale of 1 to 10 (10 being most similar). We decided to average over the 5+ people's responses everytime to determine the "test score" of the model. We also agreed that our target similarity level is 7+ and we would be satisfied once we had achieved a model that did so.
+
+            </p>
+    </div>
+
+    <footer id="footer">
+        &copy; 2019 Vojta Drmota, Arjun Verma, Kate Vovor
+    </footer>
+
+  </body>
+</html>
