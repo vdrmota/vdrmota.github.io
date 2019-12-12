@@ -21,13 +21,51 @@
 
     <div id="header-wrapper">
       <div id="header">
-        <h2 style='font-size:30pt;'><a id="link" href="index.php">CONCLUSIONS</a></h2>
+        <h2 style='font-size:30pt;'><a id="link" href="index.php">CONCLUSIONS AND FUTURE WORK</a></h2>
       </div>
     </div>
 
     <div id="main-wrapper" style='margin:0 auto;margin-top:100px;margin-bottom:100px;width:60%;'>
-        <p align='justify'>   
-            CONTENT GOES HERE
+        <p align='justify'>
+          Conclusions:
+          <br>
+          <br>
+
+          > The first and most obvious conclusion is that our most simplistic, yet carefully designed (feature engineering, normalizing, choosing a model fit to the task), model outperforms out more complicated Logistic Regression Model and even our K-Means model. Upon researching many articles, we discovered that this is a common predicament in Data Science. Often, we become too engaged in trying to find a complex model to apply, to the extent that we overlook simplistic and extremely effective models. This is a constant reminder of the fact that Data Sciece is an iterative process that inolves more than just modelling. Focus on EDA and model evaluatiion is key in order to truly accomplish the task at hand and glean the most insight.
+          <br>
+          <br>
+          > Our test metric relied on finding people with time available and using their advice repeatedly, which is not easy given the many constraints of college students. Hence, we had limited test data and would ideally have wanted to have "test scores" based on over 20 people's feedback. Additionally, we tested people's interpretation of the similarity of a single song to a list of songs that we predicted based on that single song. While this can be extrapolated to say that for every song in an input playlist, we would be able to predict a similar song (if the model performs well), it does not account for the fact that relations between songs in the input playlist could affect the list of songs we could recommend. However, this method of predicting does account for the fact that if there are 2 radically different kinds of songs in an input playlist, we would not recommend a playlist with only 1 type of songs (because of our song by song process).
+          <br>
+          <br>
+          > We thought about trying to group by playlist and determine a playlist that an input song is closest to by simply comparing the input song's feature values to the playlists' mean feature values. Essentially KNN, but instead of predicting the nearest neighbor songs, we would have found the single most representative playlist by this method. We could then have just randomly sampled a song from that playlist.
+
+          <br>
+          <br>
+
+          > Applying what we have learnt in class to a real life problem that we could all relate with empowered us to imbibe the Data Science process and realise that, while a theoretical understanding of concepts is crucial, the application of Data Scienc to a specific context will likely never be perfect. For instance, we spent ample time experimenting with classifying an input song to one of our subset of 1000 PID's. We eventually realised that such a model would be highly inaccurate and needlessly complex. This was a major learning for us with regards to the Data Science process.
+
+          <br>
+          <br>
+
+          > Upon much reflection and many discussions, we realised that there was no "right" playlist prediction, but there wre certainly good and bad ones. For instance, it was generally agreed by our friends that the "Discover Weekly" feature performs well on Spotify. However, part of this is an element of randomness, so that we can be presented a song that we would not otherwise have discovered (maybe from an artist, album or country that we would never have known about) that we end up enjoying a lot. This actually makes it harder to go wrong in playlist prediction because if the discovery of otherwise hard to discover music is considered beneficial (and given we have the technical tools to determine melodically similar songs via the audio features), then an element of randomness is actually in our favor. Hence, we realised by the end of the project that an "educated guess" on the nature of desired predictions and some element of randomness (like randomly picking from a playlist that is similar to an input playlist) is a perfectly valid technique.
+
+          <br>
+          <br>
+          <br>
+          <br>
+
+          Further Work:
+          <br>
+          <br>
+
+          > There are many things outside of the melodic nature of the songs that we do not account for - this includes the artist, album, country of artist, language of song, genre, amongst other things. Many of these features are integral to prediction by industry-standard algorithms. For instance, even though a song might be melodically similar, it probably is not ideal to recommend a song to someone that is in a language that is not understood by them. Our predictions could be limited to specific languages to make them more accurate. Additionally, things like frequency of artist in an input playlist or frequency of songs from a particular album in an input playlist could be used to supplement our model and potentially give higher weight to predicted songs by the same artist or in the same album.
+          <br>
+          <br>
+          > There is the possiility of transforming the features using various functions like Cos, Sin etc. to see how that affects the correlations between them, as well as the general results of the KNN models. Additionally, attempting to use different Distance Metrics (other than Euclidian) may chang the results. We did not implement this as we were already satisfied with our prediction algorithm (after receiving the 8+ test score), at which point, we believe, any improvements would have been purely subjective.
+          <br>
+          <br>
+          > We researched a number of potential techniques that extended beyond the course (and even applied one of them - KMeans). Another was reinforcement learning and we were intrigued by how it could potentially be applied this context at an industry level. Reinforcement Learning, from what we learnt, is defined, at a high level, by states, actions, transitions and rewards. Upon taking a specific action from a specific state, an "agent" can transition to a new state and receive a "reward" that indicates whether it was a good idea to take that action in that state. The "agent" keeps track of the value of "state-action pairs" in a table and updates this value, for a given state-action pair, every time it revisits it. This "agent" acts in a real enironment, "learning" by reinforcement, just like living beings take actions in life, experience the "rewards" from those actions and update their belief about taking such an action again when in a similar situation. The reason we discuss this is because this can be quite interestingly applied at an industry-level to song recommendation. For instance, given a user's liked songs (which could be used to define a state - for instance, a state could be defined as the average of all relevant audio feature values across the users liked songs), the "agent" (in this case, the recommender algorithm) could take an action of recommending a song that is defined by certain attributes (for instance, a song that has valence between 0.5 and 0.6). The agent could get high positive reward if the user actually listens to the whole song and adds it to their liked songs or low reward if the user does not add the song to their liked songs. In this manner, each time the user recommends a song, the agent could update their table to reflect that the recommendation of a song with certain definable attributes in a particular state is a good idea. A company like Apple Music or Spotify likely has the ability to implement a model like this. However, we used it as a means to further our academic discussion on the topic and gain insight into a fascinating Machine Learning / AI technique; reinforcement learning.
+
         </p>
     </div>
 
@@ -37,4 +75,3 @@
 
   </body>
 </html>
-
